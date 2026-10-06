@@ -49,6 +49,7 @@ Every page carries a `dd/mm/yyyy hh:MM` print time at the top-left. `@page { mar
 - Dates are chosen from a calendar and shown as `dd/mm/yyyy`. The start date must be today or later; the end date can't be before the start date.
 - Dates, the day you were viewing, and every Text / Remark / Price entry are autosaved in the browser as you type, and restored when you come back.
 - Changing the start date moves your day plans with it (Day 1 stays Day 1).
+- Use **Copy previous day** to copy the previous day's activities, remarks, and prices into the current day.
 - Tap a suggested word to add it to *Text*; tap again to remove it.
 - There is no save button: the plan is autosaved and the Summary page displays it directly.
 

@@ -185,6 +185,9 @@ fieldset input{ width:100%; margin-top:8px; }
   gap:14px;
   margin-bottom:6px;
 }
+.day-actions{ grid-column:1 / -1; display:flex; justify-content:flex-end; }
+button.copy-day{ display:inline-flex; align-items:center; gap:8px; padding:8px 14px; font-size:.9rem; }
+button.copy-day:disabled{ background:var(--paper-dim); color:var(--muted); cursor:not-allowed; }
 
 /* ---------- Buttons ---------- */
 button{
@@ -356,9 +359,10 @@ h2 > i, h4 > i, legend > i, .count > i{ color:var(--amber-dark); margin-right:2p
   #nav-placeholder, #pagination-placeholder, #footer-placeholder,
   .btn-print, #clear, .clear-row{ display:none !important; }
   .wrap, main.wrap{ max-width:none; padding:0; }
-  .entry, .pick-card, .trip-day{ break-inside:avoid; box-shadow:none; }
+  .pick-card, .trip-day{ break-inside:avoid; box-shadow:none; }
   .pick-card{ box-shadow:none; }
   .pick-row{ grid-template-columns:1fr 1fr; }
+  h2{ break-after:avoid; }
   a{ color:inherit; }
   /* Header / footer groups repeat on every printed page: top-left stamp + page margins.
      (CSS table display on plain divs — no <table> element.) */

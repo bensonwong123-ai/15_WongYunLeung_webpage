@@ -75,7 +75,9 @@ function refreshChips() {
 function renderDayFields() {
   const draft = getDraft();
   const day = draft.days[activeDate] || emptyDay();
-  $('day-fields').innerHTML = PERIODS.map(([k, label]) => {
+  const copyDisabled = activeIdx === 0 ? ' disabled' : '';
+  const actions = `<div class="day-actions"><button type="button" class="copy-day"${copyDisabled}><i class="fa-regular fa-copy" aria-hidden="true"></i> Copy previous day</button></div>`;
+  $('day-fields').innerHTML = actions + PERIODS.map(([k, label]) => {
     const p = getPeriod(day, k);
     const chips = (window.TRIP_DATA.activities[k] || []).map(a =>
       `<button type="button" class="chip" data-k="${k}" data-v="${esc(a)}">${esc(a)}</button>`).join('');
@@ -132,6 +134,17 @@ $('day-tabs').addEventListener('click', ev => {
 // typing in any field, or tapping a quick-pick word
 $('day-fields').addEventListener('input', () => { saveActiveDayFields(); refreshChips(); });
 $('day-fields').addEventListener('click', ev => {
+  const copyButton = ev.target.closest('.copy-day');
+  if (copyButton && activeIdx > 0) {
+    const draft = getDraft();
+    const dates = check(draft).days;
+    const previousDay = draft.days[dates[activeIdx - 1]] || emptyDay();
+    draft.days[activeDate] = Object.fromEntries(PERIODS.map(([k]) => [k, { ...getPeriod(previousDay, k) }]));
+    setDraft(draft);
+    renderDayFields();
+    renderDraftCost();
+    return;
+  }
   const chip = ev.target.closest('.chip'); if (!chip) return;
   const input = $('f-' + chip.dataset.k + '-text');
   const items = textItems(input.value);
