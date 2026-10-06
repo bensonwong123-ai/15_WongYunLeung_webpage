@@ -177,13 +177,15 @@ function tripHTML(t, opts = {}) {
       <p class="hint">${esc(fmtDate(t.start) || '?')} → ${esc(fmtDate(t.end) || '?')} (${c.days.length} day${c.days.length === 1 ? '' : 's'})</p>
       ${c.days.map((d, j) => `
         <div class="trip-day">
-          <strong>Day ${j + 1} · ${esc(fmtDate(d))}</strong>
-          <span class="day-cost">${money(c.perDay[j])}</span>
-          <ul>${PERIODS.map(([k, label]) => {
+          <div class="trip-day-head">
+            <strong>Day ${j + 1} · ${esc(fmtDate(d))}</strong>
+            <span class="day-cost">${money(c.perDay[j])}</span>
+          </div>
+          <ul class="trip-periods">${PERIODS.map(([k, label]) => {
             const p = getPeriod(t.days && t.days[d], k);
             return `
-            <li><strong>${label}:</strong> ${esc(p.text) || '—'}
-              ${Number(p.price) ? `<span class="li-price">${money(p.price)}</span>` : ''}
+            <li class="trip-period"><strong>${label}:</strong>
+              <span>${esc(p.text) || '—'} ${Number(p.price) ? `<span class="li-price">${money(p.price)}</span>` : ''}</span>
               ${p.remark ? `<small>Remark: ${esc(p.remark)}</small>` : ''}
             </li>`;
           }).join('')}

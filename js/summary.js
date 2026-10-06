@@ -20,6 +20,8 @@ function show() {
   const plan = Store.get('trip-draft', { start: '', end: '', days: {} });
   const hasPlan = plan.start || plan.end ||
     Object.values(plan.days || {}).some(d => PERIODS.some(([k]) => { const p = getPeriod(d, k); return p.text || p.remark || p.price; }));
+  const total = document.getElementById('summary-total');
+  total.textContent = hasPlan ? `Total ${money(tripCost({ ...plan, country: sel.country, hotel: sel.hotel }).total)}` : '';
   document.getElementById('plan').innerHTML = hasPlan
     ? tripHTML({ ...plan, country: sel.country, hotel: sel.hotel })
     : '<p class="empty">No trip plan yet — add your dates and daily plans on the <a href="journey.html">Journey page</a>.</p>';
