@@ -176,6 +176,9 @@ fieldset{
 }
 legend{ font-weight:600; padding:0 6px; color:var(--navy-deep); }
 fieldset input{ width:100%; margin-top:8px; }
+.price-input{ display:flex; align-items:center; gap:8px; margin-top:8px; }
+.price-input span{ color:var(--muted); }
+.price-input input{ flex:1; min-width:0; margin-top:0; }
 .periods, #day-fields{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));

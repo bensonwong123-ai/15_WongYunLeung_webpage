@@ -83,8 +83,8 @@ function renderDayFields() {
     <fieldset><legend>${label}</legend>
       <input type="text" id="f-${k}-text" placeholder="Text — type or tap a word below" value="${esc(p.text)}">
       <div class="chips">${chips}</div>
+      <div class="price-input"><span aria-hidden="true">HK$</span><input type="number" id="f-${k}-price" placeholder="Price/person" min="0" step="any" value="${esc(p.price)}"></div>
       <input type="text" id="f-${k}-remark" placeholder="Remark" value="${esc(p.remark)}">
-      <input type="number" id="f-${k}-price" placeholder="Price/person($)" min="0" step="any" value="${esc(p.price)}">
     </fieldset>`;
   }).join('');
   refreshChips();
@@ -178,7 +178,12 @@ function onDatesChanged() {
   dateTextBad = false;
   const start = readDate('trip-start');
   updateEndMin(start);
-  const end = readDate('trip-end');
+  let end = readDate('trip-end');
+  const endText = $('trip-end').value.trim();
+  if (start && ((!end && !endText) || (end && end < start))) {
+    setDateInput('trip-end', start, start);
+    end = start;
+  }
   // moving the start date carries the plans along (Day 1 stays Day 1)
   if (oldStart && start && oldStart !== start) {
     const delta = dayDiff(oldStart, start), moved = {};

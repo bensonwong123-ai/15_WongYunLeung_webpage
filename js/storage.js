@@ -9,8 +9,8 @@
 // Escape user-entered text before inserting it as HTML
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-// $1,234.50
-const money = n => '$' + (Number(n) || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+// HK$1,234.50
+const money = n => 'HK$' + (Number(n) || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 // Simple get/set wrapper around localStorage (JSON in, JSON out)
 const Store = {
