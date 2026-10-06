@@ -1,0 +1,368 @@
+/* ============================================================
+   components.css — reusable pieces: hero, cards, forms, buttons,
+   day tabs, trip entries. Used across all 4 pages.
+   ============================================================ */
+
+/* ---------- Hero / storytelling (index.html) ---------- */
+.hero{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:32px;
+  align-items:center;
+  /* padding:36px 0 20px; */
+  padding:5px 0 20px;
+}
+.hero .tagline{
+  /* text-align:center; */
+  display:inline-block;
+  /* font-size:0.8rem; */
+  font-size:1.2rem;
+  letter-spacing:.0.04em;
+  text-transform:uppercase;
+  color:var(--amber-dark);
+  /* color:var(--navy-deep); */
+  background:var(--amber-soft);
+  padding:12px 28px;
+  border-radius:999px;
+  /* margin-top:0; */
+  margin-bottom:14px;
+  /* font-weight:600; */
+  font-weight:800;
+  /* --- Add these lines for sharpness --- */
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+.hero h1{ font-size:2.3rem; line-height:1.15; }
+.hero p.lead{ font-size:1.05rem; color:var(--muted); max-width:46ch; }
+.hero img{
+  width:100%;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+.btn-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:6px;
+  padding:13px 28px;
+  border-radius:999px;
+  background:var(--amber);
+  color:var(--navy-deep);
+  font-weight:700;
+  border:0;
+  box-shadow:var(--shadow);
+}
+.btn-cta:hover{ background:var(--amber-dark); color:#fff; }
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px;
+  margin-top:8px;
+}
+.step-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+.step-card .num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:30px; height:30px;
+  border-radius:50%;
+  background:var(--navy-deep);
+  color:var(--amber);
+  font-weight:700;
+  margin-bottom:10px;
+}
+.step-card h3{ font-size:1.05rem; margin-bottom:.3em; }
+.step-card p{ color:var(--muted); font-size:.92rem; margin:0; }
+
+/* ---------- Image cards with checkbox select (dest_hotel.html) ---------- */
+.count{ font-size:.8rem; color:var(--muted); font-weight:500; }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+  gap:16px;
+}
+label.item{
+  position:relative;
+  display:block;
+  cursor:pointer;
+  background:var(--card);
+  border:2px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:transform .15s, border-color .15s;
+}
+label.item:hover{ transform:translateY(-3px); }
+label.item.selected{
+  border-color:var(--amber);
+  box-shadow:0 0 0 3px var(--amber-soft);
+}
+label.item input[type=checkbox]{
+  position:absolute; top:10px; left:10px;
+  width:22px; height:22px;
+  accent-color:var(--amber-dark);
+  z-index:2;
+  cursor:pointer;
+}
+label.item img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  display:block;
+}
+label.item .info{ padding:10px 12px; }
+label.item h3{ margin:0 0 4px; font-size:.98rem; }
+.price{ color:var(--amber-dark); font-weight:700; }
+
+/* ---------- Cards / forms (journey.html) ---------- */
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+  margin-bottom:24px;
+}
+.card h2{ margin-top:0; }
+.hint{ color:var(--muted); font-size:.9rem; margin:2px 0 16px; }
+
+.trip-dates{ display:flex; gap:18px; flex-wrap:wrap; margin-bottom:6px; }
+.trip-dates label{
+  display:flex; flex-direction:column; gap:5px;
+  font-size:.85rem; color:var(--muted); font-weight:600;
+}
+input[type=text],input[type=date],input[type=tel],input[type=number]{
+  padding:10px 12px;
+  border:2px solid var(--line);
+  border-radius:10px;
+  background:var(--paper);
+  color:var(--ink);
+  font:inherit;
+}
+input:focus{ outline:none; border-color:var(--amber); }
+
+.day-tabs{
+  display:flex; gap:8px; overflow-x:auto;
+  padding-bottom:6px; margin:6px 0 18px;
+}
+.day-tab{
+  flex:0 0 auto;
+  border:2px solid var(--line);
+  background:var(--card);
+  color:var(--ink);
+  border-radius:12px;
+  padding:8px 14px;
+  cursor:pointer;
+  text-align:center;
+  font-weight:600;
+}
+.day-tab small{ display:block; font-weight:400; color:var(--muted); font-size:.72rem; margin-top:2px; }
+.day-tab.on{ border-color:var(--amber); background:var(--amber-soft); }
+
+fieldset{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:8px 14px 16px;
+  margin:0;
+}
+legend{ font-weight:600; padding:0 6px; color:var(--navy-deep); }
+fieldset input{ width:100%; margin-top:8px; }
+.periods, #day-fields{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+  margin-bottom:6px;
+}
+
+/* ---------- Buttons ---------- */
+button{
+  border:0;
+  border-radius:999px;
+  padding:12px 30px;
+  background:var(--amber);
+  color:var(--navy-deep);
+  font-size:1rem;
+  font-weight:700;
+  cursor:pointer;
+  font-family:inherit;
+}
+button:hover{ background:var(--amber-dark); color:#fff; }
+button.danger{ background:transparent; color:var(--bad); border:2px solid var(--bad); }
+button.danger:hover{ background:var(--bad); color:#fff; }
+
+/* ---------- Trip plan card (summary.html) ---------- */
+.entry{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-left:5px solid var(--amber);
+  border-radius:12px;
+  padding:14px 18px;
+  margin-bottom:14px;
+}
+.entry header{
+  display:flex; justify-content:space-between; align-items:center;
+  font-weight:700; color:var(--navy-deep);
+}
+.trip-day{ margin-top:10px; padding-top:8px; border-top:1px dashed var(--line); }
+.trip-day ul{ list-style:none; margin:6px 0 0; }
+.trip-day li{ padding:4px 0; }
+.trip-day small{ color:var(--muted); display:block; }
+.empty{ color:var(--muted); text-align:center; padding:14px; }
+
+/* ---------- Small utility card for a single selected item (summary.html) ---------- */
+.pick-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; }
+.pick-row > section > h2{ margin-top:0; }
+.pick-row + section > h2{ margin-top:32px; }   /* Trip Plan is now the first <section> of <main>, so restore its gap */   /* both headings start on the same line */
+.pick-row .empty{ background:var(--card); border:1px dashed var(--line); border-radius:var(--radius); }
+.pick-card{
+  background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.pick-card img{ display:block; width:100%; height:190px; object-fit:cover; }
+.pick-card > div{ padding:12px 16px 14px; }
+.pick-card h3{ margin:0 0 2px; font-size:1.05rem; }
+
+@media (max-width:720px){
+  .pick-row{ grid-template-columns:1fr; }
+  .hero{ grid-template-columns:1fr; }
+  .hero img{ order:-1; }
+}
+
+/* ---------- Detail page (detail.html) ---------- */
+.detail{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+  gap:28px;
+  align-items:start;
+  margin-top:12px;
+}
+.detail > img{
+  width:100%;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  aspect-ratio:3/2;
+  object-fit:cover;
+}
+.detail .info h1{ margin:4px 0; }
+.big-price{ font-size:1.6rem; }
+.big-price small{ font-size:.9rem; color:var(--muted); font-weight:400; }
+.detail-list{ list-style:none; margin:14px 0 18px; padding:0; }
+.detail-list li{ display:grid; grid-template-columns:38% 1fr; padding:8px 10px; border-bottom:1px solid var(--line); }
+.detail-key{ color:var(--muted); font-weight:600; }
+@media (max-width:700px){ .detail{ grid-template-columns:1fr; } }
+
+/* ---------- Prices & cost breakdown ---------- */
+.price-label{ display:block; color:var(--muted); font-size:.75rem; font-weight:500; }
+.pick-card .price-label{ display:inline; margin-left:4px; }
+.draft-cost{
+  margin:16px 0 18px; padding:12px 16px;
+  background:var(--amber-soft); border-radius:12px;
+  color:var(--navy-deep);
+}
+.draft-cost:empty{ display:none; }
+.draft-cost small{ display:block; color:var(--muted); margin-top:2px; }
+.trip-day{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; }
+.trip-day ul{ flex:0 0 100%; }
+.day-cost{ color:var(--amber-dark); font-weight:700; }
+.li-price{ color:var(--amber-dark); font-weight:600; margin-left:6px; }
+.cost{ margin-top:16px; padding-top:12px; border-top:2px solid var(--line); }
+.cost h4{ margin:0 0 6px; font-family:'Fraunces','Noto Sans TC',serif; color:var(--navy-deep); }
+/* label | value rows; subgrid keeps the two columns aligned across all rows */
+.cost-list{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr auto; }
+.cost-list li{ display:grid; grid-template-columns:subgrid; grid-column:1 / -1; column-gap:16px; padding:6px 0; border-bottom:1px dashed var(--line); }
+.cost-value{ text-align:right; white-space:nowrap; font-weight:600; }
+.cost-list li.total{
+  border-bottom:0; padding-top:10px;
+  font-size:1.15rem; font-weight:700; color:var(--navy-deep);
+}
+.cost-list li.total .cost-value{ color:var(--amber-dark); }
+
+/* ---------- Home page: "Good to know" ---------- */
+.know h3{ font-size:1.02rem; margin:20px 0 8px; }
+.know h3:first-of-type{ margin-top:8px; }
+.know-list{ margin:0; padding-left:20px; }
+.know-list li{ margin-bottom:6px; }
+.know code{ background:var(--paper); padding:1px 6px; border-radius:6px; font-size:.9em; }
+.know .cost-list{ grid-template-columns:auto 1fr; }
+.know .cost-label{ white-space:nowrap; }
+.know .cost-value{ text-align:left; white-space:normal; font-weight:400; }
+.know .cost-list li.total .cost-value{ font-size:1rem; font-weight:700; color:var(--navy-deep); }
+
+/* ---------- Journey: dates, quick-pick chips, messages ---------- */
+.trip-dates input{ cursor:pointer; min-width:160px; }
+.hint.error{ color:var(--bad); font-weight:600; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+button.chip{
+  padding:3px 10px; font-size:.78rem; font-weight:500; line-height:1.5;
+  background:var(--paper); color:var(--ink); border:1px solid var(--line);
+}
+button.chip:hover{ background:var(--amber-soft); color:var(--ink); border-color:var(--amber); }
+button.chip.on{ background:var(--amber); color:var(--navy-deep); border-color:var(--amber-dark); font-weight:600; }
+
+/* calendar popup: match the site's amber */
+.flatpickr-day.selected, .flatpickr-day.selected:hover{ background:var(--amber); border-color:var(--amber); color:var(--navy-deep); }
+.flatpickr-day.today{ border-color:var(--amber-dark); }
+.flatpickr-day.today:hover{ background:var(--amber-soft); color:var(--ink); border-color:var(--amber-dark); }
+
+/* home page: breathing room above the "Why this tool" card */
+/* .card.why{ margin-top:20px; } */
+
+/* small "Choose one ..." line under a heading */
+.section-hint{ margin:-4px 0 12px; }
+
+/* icons sitting in front of headings / labels */
+h2 > i, h4 > i, legend > i, .count > i{ color:var(--amber-dark); margin-right:2px; }
+.cost-label > i{ width:1.25em; text-align:center; color:var(--amber-dark); }
+
+/* ---------- Summary page: header row + print button ---------- */
+.page-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+.btn-print{ display:inline-flex; align-items:center; gap:8px; padding:10px 22px; }
+
+/* ---------- Print / Save as PDF (summary.html) ---------- */
+/* ---- Former inline styles ---- */
+.page-title{ margin-bottom:4px; }
+.card.why p{ margin:0; }
+.clear-row{ text-align:center; margin-top:32px; }
+.is-hidden{ visibility:hidden; }
+.btn-back{
+  display:inline-flex; align-items:center; gap:8px; margin-bottom:16px;
+  padding:8px 18px; border:2px solid var(--amber-dark); border-radius:8px;
+  color:var(--ink); font-weight:600; text-decoration:none;
+}
+.btn-back:hover{ background:var(--amber-dark); color:#fff; }
+
+/* ---- Print: summary page ---- */
+/* The date/time stamp lives in the print frame (summary.html), screen-hidden. */
+.print-stamp{ display:none; }
+
+@media print{
+  /* margin:0 also stops the browser printing its own header/footer
+     (its date format can't be changed); the frame below supplies the margins. */
+  @page{ margin:0; }
+  body{ background:#fff; padding:0 14mm; }
+  #nav-placeholder, #pagination-placeholder, #footer-placeholder,
+  .btn-print, #clear, .clear-row{ display:none !important; }
+  .wrap, main.wrap{ max-width:none; padding:0; }
+  .entry, .pick-card, .trip-day{ break-inside:avoid; box-shadow:none; }
+  .pick-card{ box-shadow:none; }
+  .pick-row{ grid-template-columns:1fr 1fr; }
+  a{ color:inherit; }
+  /* Header / footer groups repeat on every printed page: top-left stamp + page margins.
+     (CSS table display on plain divs — no <table> element.) */
+  .print-frame{ display:table; width:100%; }
+  .print-frame-head{ display:table-header-group; }
+  .print-frame-body{ display:table-row-group; }
+  .print-frame-foot{ display:table-footer-group; }
+  .print-stamp{ display:block; height:14mm; padding-top:7mm; box-sizing:border-box; font-size:.8rem; color:var(--muted); text-align:left; }
+  .print-frame-foot::after{ content:""; display:block; height:14mm; }
+}

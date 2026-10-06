@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png">
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/components.css">
+    <title>Personal Trip Planner</title>
+</head>
+<body>
+  <!-- COMMON: navigation bar -->
+  <div id="nav-placeholder"></div>
+
+  <main class="wrap">
+
+    <!-- Hero: storytelling -->
+    <section class="hero">
+      <div>
+        <span class="tagline">Personal Trip Planner</span>
+        <h1>Plan your trip the way you'd tell the story of it.</h1>
+        <p class="lead">
+          One country, one home base, and a seamless day-by-day flow for what you'll actually do each morning, afternoon, and night. No messy spreadsheets or scattered notes—just a simple guide that takes you from picking a destination to a clean, shareable summary you can look back on.
+        </p>
+        <a class="btn-cta" href="dest_hotel.html">
+          <i class="fa-solid fa-compass"></i> Plan New Trip
+        </a>
+      </div>
+      <img id="hero-country-image" alt="Travel destination">
+    </section>
+
+    <!-- How it works -->
+    <section>
+      <h2>How it works</h2>
+      <div class="steps">
+        <article class="step-card">
+          <span class="num">1</span>
+          <h3>Choose a destination</h3>
+          <p>Browse a curated set of countries and pick where you're heading.</p>
+        </article>
+        <article class="step-card">
+          <span class="num">2</span>
+          <h3>Pick your hotel</h3>
+          <p>Select a home base to stay at for the duration of your trip.</p>
+        </article>
+        <article class="step-card">
+          <span class="num">3</span>
+          <h3>Plan each day</h3>
+          <p>Set your dates, then map out your morning, afternoon and night - with estimated costs for each.</p>
+        </article>
+        <article class="step-card">
+          <span class="num">4</span>
+          <h3>Review the summary</h3>
+          <p>Get a clan overview of your destination, hotel, full itinerary, and total trip cost in one place.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section>
+      <h2>Why this tool</h2>
+      <div class="card why">
+        <p>
+          This started from simple handwritten notes—a country, a hotel, and a rough plan for each part of the day. This app turns that personal habit into a smooth, guided flow. Everything you type is saved automatically in your browser, so you can close the tab, come back later, and pick up right where you left off.
+        </p>
+      </div>
+    </section>
+
+    <!-- Good to know: how the cost works + assumptions -->
+    <section>
+      <h2>Good to know</h2>
+      <div class="card know">
+        <p>All costs are estimates. The total cost is calculated from the air ticket, hotel, and daily trip costs you enter.</p> 
+        <h3>How the total cost is calculated</h3>
+        <ul class="cost-list">
+          <li><span class="cost-label"><i class="fa-solid fa-plane"></i> Air ticket</span><span class="cost-value">Country price, labelled <em>Round-trip</em></span></li>
+          <li><span class="cost-label"><i class="fa-solid fa-hotel"></i> Hotel</span><span class="cost-value">Hotel price (<em>Double room daily</em>) × number of nights</span></li>
+          <li><span class="cost-label"><i class="fa-solid fa-dollar-sign"></i> Daily trip cost</span><span class="cost-value">Sum of every Morning, Afternoon and Night price you enter</span></li>
+          <li class="total"><span class="cost-label">Total</span><span class="cost-value">Air ticket + Hotel + Daily trip cost</span></li>
+        </ul>
+
+        <h3>Assumptions</h3>
+        <ul class="know-list">
+          <li>The air ticket is for <strong>one traveller</strong>.</li>
+          <li>The hotel price is for <strong>one double room</strong> per night.</li>
+          <li>Nights = days &minus; 1. A 3-day trip is 2 hotel nights; a 1-day trip has no hotel cost.</li>
+          <li>All prices are in US dollars ($).</li>
+          <li>Country and hotel prices are sample figures and can be edited in <code>js/data.js</code>.</li>
+        </ul>
+
+        <h3>Tips</h3>
+        <ul class="know-list">
+          <li>Pick <strong>one</strong> country and <strong>one</strong> hotel &mdash; choosing another replaces your current pick. Click a photo to see its details.</li>
+          <li>Dates use <strong>dd/mm/yyyy</strong>. The start date must be today or later, and the end date can't be before the start date.</li>
+          <li>Everything you enter (dates and every day's plan) is saved automatically in <strong>this browser</strong> only, so you can move between pages freely. Moving between pages with the menu or the Prev / Next buttons keeps everything you entered. Pressing <em>Plan New Trip</em> (or opening this Home page directly) clears it and starts a fresh plan. Using another browser or device also starts you fresh.</li>
+          <li>On the Journey page, tap the suggested words (Meal, Shopping, Travelling&hellip;) to fill in <em>Text</em> quickly, or type your own.</li>
+          <li>There is no save button: your plan is saved as you type on the Journey page, and the Summary page always shows it, with the total cost.</li>
+          <li>On the Summary page, press the <i class="fa-solid fa-print"></i> <em>Print</em> button and choose <em>Save as PDF</em> to keep a copy of your summary.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- COMMON: Page navigation -->
+  <div id="pagination-placeholder"></div>
+
+  <!-- COMMON: Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

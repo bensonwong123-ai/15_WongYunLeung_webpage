@@ -1,0 +1,73 @@
+https://wordmark.it/
+
+##html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caacupe+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+##css
+.roboto-<uniquifier> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.caacupe-one-regular {
+  font-family: "Caacupe One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+##icon (in awesome website)
+Selected Country        <i class="fa-solid fa-globe""></i>
+Selected Hotel          <i class="fa-solid fa-hotel"></i>
+Trip Plan               <i class="fa-solid fa-person-walking-luggage"></i>
+Morning                 <i class="fa-regular fa-alarm-clock"></i>
+Afternoon               <i class="fa-solid fa-sun"></i>
+Night                   <i class="fa-solid fa-moon"></i>
+Daily trip cost         <i class="fa-solid fa-dollar-sign"></i>
+Air ticket              <i class="fa-solid fa-plane"></i>
+Cost                    <i class="fa-solid fa-sack-dollar"></i>
+printer                 <i class="fa-solid fa-print"></i>
+
+##Constants
+const INFO = {
+  TITLE: "個人旅行規劃",
+  FOOTER: "***旅行***",
+  COPYRIGHT-YEAR: "2026",
+  EMAIL: "bensonwong123@gmail.com",
+  MOBILE: "852-96511360",
+  01-HEADING: "概覽",
+  02-HEADING: "出行資訊",
+  03-HEADING: "住宿",
+  04-HEADING: "費用",
+  05-HEADING: "總結"
+  01-INFO: "",
+};
+
+## 10 Countries images
+1. Brazil
+2. China
+3. Egypt	
+4. Hong Kong
+5. India
+6. Indonesia
+7. Japan
+8. Philippines
+9. Russia
+10. United States
+
+## 10 hotels images
+Hotel-Regal
+Hotel-iconic
+Hotel-London
+Hotel-Kuta Bali
+Hotel-Marina Bay Sands
+Hotel-Historic
+Hotel-Magical
+Hotel-Nacional
+Hotel-The Peninsula
+Hotel-Grand
+Hotel-Experience Fairmont Mumbai

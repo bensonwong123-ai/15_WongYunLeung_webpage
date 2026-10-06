@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png">
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/components.css">
+    <title>Destination & Hotel — Trip Planner</title>
+</head>
+<body>
+  <!-- COMMON: navigation bar -->
+  <div id="nav-placeholder"></div>
+
+  <main class="wrap">
+    <h1 class="page-title">Choose your destination</h1>
+    <p class="hint">Pick one country and one hotel. Selecting another replaces your current pick.</p>
+
+    <section>
+      <h2><i class="fa-solid fa-globe"></i> Countries </h2>
+      <p class="hint section-hint">Choose one country</p>
+      <div id="countries" class="grid"></div>
+    </section>
+
+    <section>
+      <h2><i class="fa-solid fa-hotel"></i> Hotels </h2>
+      <p class="hint section-hint">Choose one hotel</p>
+      <div id="hotels" class="grid"></div>
+    </section>
+  </main>
+
+  <!-- COMMON: Page navigation -->
+  <div id="pagination-placeholder"></div>
+
+  <!-- COMMON: Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/dest_hotel.js"></script>
+</body>
+</html>

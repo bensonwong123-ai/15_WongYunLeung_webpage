@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png">
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/components.css">
+    <title>Summary — Trip Planner</title>
+</head>
+<body>
+  <!-- COMMON: navigation bar -->
+  <div id="nav-placeholder"></div>
+
+  <main class="wrap">
+   <div class="print-frame">
+    <div class="print-frame-head"><div class="print-stamp" id="print-stamp"></div></div>
+    <div class="print-frame-body">
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">Trip Summary</h1>
+        <p class="hint">Everything you've selected and planned so far.</p>
+      </div>
+      <button id="print-summary" class="btn-print" type="button" title="Print / save as PDF">
+        <i class="fa-solid fa-print"></i> Print
+      </button>
+    </div>
+
+    <div class="pick-row">
+      <section>
+        <h2><i class="fa-solid fa-globe"></i> Selected Country</h2>
+        <div id="country"></div>
+      </section>
+
+      <section>
+        <h2><i class="fa-solid fa-hotel"></i> Selected Hotel</h2>
+        <div id="hotel"></div>
+      </section>
+    </div>
+
+    <section>
+      <h2><i class="fa-solid fa-person-walking-luggage"></i> Trip Plan</h2>
+      <div id="plan"></div>
+    </section>
+
+    <p class="clear-row">
+      <button id="clear" class="danger">Clear all data</button>
+    </p>
+    </div>
+    <div class="print-frame-foot"></div>
+   </div>
+  </main>
+
+  <!-- COMMON: Page navigation -->
+  <div id="pagination-placeholder"></div>
+
+  <!-- COMMON: Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/summary.js"></script>
+</body>
+</html>
