@@ -19,7 +19,7 @@ if (!item) {
     <article class="detail">
       <img id="big" src="${esc(item.image)}" alt="${esc(item.title)}">
       <div class="info">
-        <p class="count">${type === HOTELS ? '<i class="fa-solid fa-hotel"></i> Hotel' : '<i class="fa-solid fa-globe"></i> Country'}</p>
+        <p class="count">${type === HOTELS ? '<i class="fa-solid fa-hotel"></i> Hotel' : '<i class="fa-solid fa-globe"></i> Destination'}</p>
         <h1>${esc(item.title)}</h1>
         <p class="price big-price">${money(item.price)} <small>${esc(PRICE_LABEL[type])}</small></p>
         <p>${esc(item.description || '')}</p>
@@ -29,12 +29,13 @@ if (!item) {
     </article>`;
 
   const singularKey = SINGULAR[type];
+  const displayLabel = type === HOTELS ? 'hotel' : 'destination';
   const btn = document.getElementById('toggle');
   const isSelected = () => {
     const s = getSelections()[singularKey];
     return !!s && s.id === id;
   };
-  const paint = () => { btn.textContent = isSelected() ? '✓ Selected (click to deselect)' : `Select as your ${singularKey}`; };
+  const paint = () => { btn.textContent = isSelected() ? '✓ Selected (click to deselect)' : `Select as your ${displayLabel}`; };
   btn.onclick = () => {
     setSelection(type, isSelected() ? null : id); // selecting replaces any previous choice
     paint();

@@ -28,7 +28,7 @@ function show() {
 }
 
 document.getElementById('clear').onclick = () => {
-  if (!confirm('Clear the selected country/hotel and the trip plan?')) return;
+  if (!confirm('Clear the selected destination/hotel and the trip plan?')) return;
   resetPlannerData();
   show();
 };

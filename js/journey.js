@@ -16,13 +16,13 @@ let dateTextBad = false;  // only possible if the calendar script failed to load
 const TODAY = todayISO();
 const $ = id => document.getElementById(id);
 
-// ---- Reminder if country/hotel not chosen yet ----
+// ---- Reminder if destination/hotel not chosen yet ----
 function renderPickHint() {
   const el = $('pick-hint');
   if (selections.country && selections.hotel) {
     el.innerHTML = `<i class="fa-solid fa-globe"></i> ${esc(selections.country.title)} &nbsp;·&nbsp; <i class="fa-solid fa-hotel"></i> ${esc(selections.hotel.title)} — <a href="dest_hotel.html">change</a>`;
   } else {
-    el.innerHTML = `You haven't picked a country/hotel yet — <a href="dest_hotel.html">choose one first</a> (you can still draft your plan below).`;
+    el.innerHTML = `You haven't picked a destination/hotel yet — <a href="dest_hotel.html">choose one first</a> (you can still draft your plan below).`;
   }
 }
 
