@@ -13,10 +13,21 @@ document.querySelector('.btn-cta')?.addEventListener('click', ev => {
 });
 
 const countries = window.TRIP_DATA?.[COUNTRIES] ?? [];
-const country = countries[Math.floor(Math.random() * countries.length)];
 const heroImage = document.getElementById("hero-country-image");
 
-if (country && heroImage) {
-	heroImage.src = country.image;
-	heroImage.alt = `${country.title} travel destination`;
+let selectedCountry = countries[Math.floor(Math.random() * countries.length)];
+
+function showCountry(country) {
+  if (!country || !heroImage) return;
+  selectedCountry = country;
+  heroImage.src = country.image;
+  heroImage.alt = `${country.title} travel destination`;
 }
+
+showCountry(selectedCountry);
+
+heroImage?.addEventListener("click", () => {
+  const otherCountries = countries.filter(country => country !== selectedCountry);
+  if (otherCountries.length === 0) return;
+  showCountry(otherCountries[Math.floor(Math.random() * otherCountries.length)]);
+});
